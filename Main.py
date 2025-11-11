@@ -8,4 +8,6 @@
 
 # Separation of logic (organizing functions)
 
-idk = 1
+import Utilities
+
+Utilities.print_welcome_message()
