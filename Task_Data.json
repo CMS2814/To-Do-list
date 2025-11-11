@@ -1,0 +1,20 @@
+{
+    "tasks": [
+        {
+        "task_id": 1,
+        "name": "Buy groceries",
+        "description": "Milk, Bread, Eggs, Butter",
+        "due_date": "2024-06-10",
+        "priority": "High",
+        "status": "Pending"
+        },
+        {
+        "task_id": 2,
+        "name": "Finish project report",
+        "description": "Complete the final draft of the project report",
+        "due_date": "2024-06-15",
+        "priority": "Medium",
+        "status": "In Progress"
+        }
+    ]
+}

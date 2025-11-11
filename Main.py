@@ -9,6 +9,14 @@
 # Separation of logic (organizing functions)
 
 import Utilities
-import _json
+import json
+
+with open("Task_Data.json", "r") as file:
+    tasks = json.load(file)
 
 Utilities.print_welcome_message()
+
+Utilities.add_task("Task_Data.json")
+
+Utilities.view_task(tasks, 1)
+Utilities.view_task(tasks, 0)
