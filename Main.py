@@ -28,18 +28,19 @@ while True:
         Utilities.add_task("Task_Data.json")
         Utilities.Load_Tasks_From_File("Task_Data.json")
     elif choice == "2":
-        task_id_input = input(
-            "\nEnter task ID, Name, Priority or Status to view a specific task/s or press Enter to view all tasks: "
-        )
-        task_id = int(task_id_input) if task_id_input else None
+        try:
+            task_id = int(input("\nEnter task ID or press Enter to view all tasks: "))
+        except ValueError:
+            task_id = None
         Utilities.view_tasks(tasks, task_id)
     elif choice == "3":
         task_id_input = input("\nEnter task ID to edit: ")
         try:
             task_id = int(task_id_input) - 1  # Adjusting for zero-based index
-            update_option = input(
+            print(
                 "\nChoose what to update: \n1. Name\n2. Description\n3. Due Date\n4. Priority\n5. Status"
             )
+            update_option = input("Enter your choice (1-5): ")
         except ValueError:
             print("\nInvalid task ID. Please enter a number.")
         Utilities.edit_task("Task_Data.json", task_id, update_option)
@@ -48,10 +49,10 @@ while True:
         task_id_input = input("\nEnter the task ID to delete: ")
         try:
             task_id = int(task_id_input) - 1  # Adjusting for zero-based index
+            Utilities.delete_task("Task_Data.json", task_id)
+            Utilities.Load_Tasks_From_File("Task_Data.json")
         except ValueError:
-            task_id = task_id_input  # Keep as string if not an integer
-        Utilities.delete_task("Task_Data.json", task_id)
-        Utilities.Load_Tasks_From_File("Task_Data.json")
+            print("\nInvalid task ID. Please enter a number.")
     elif choice == "5":
         print("\nExiting the To-Do List App. Goodbye!")
         break
