@@ -75,7 +75,7 @@ def edit_task(task, task_id, update_option):
         tasks["tasks"][task_id]["description"] = new_description
     elif update_option == "3":
         new_due_date = input("Enter the new task due date (YYYY-MM-DD): ")
-        tasks["tasks"][task_id]["due_date"] = new_due_date
+        tasks["tasks"][task_id]["due date"] = new_due_date
     elif update_option == "4":
         new_priority = input("Enter the new task priority (Low, Medium, High): ")
         tasks["tasks"][task_id]["priority"] = new_priority
