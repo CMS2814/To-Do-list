@@ -8,8 +8,6 @@
 
 # Separation of logic (organizing functions)
 
-# Goal for November 12: Implement search with ID, Name, Priority or Status in view tasks function. And Edit task function.
-
 import Utilities
 import json
 
