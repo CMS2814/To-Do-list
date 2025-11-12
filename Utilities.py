@@ -32,19 +32,30 @@ def add_task(task):
     print("Task added successfully!")
 
 
-def delete_task(task):
-    pass
+def delete_task(task, task_id):
+    with open(task, "r") as file:
+        tasks = json.load(file)
+
+    print(task_id)
+    if task_id > len(tasks["tasks"]):
+        print("\nTask ID not found.")
+        return
+    tasks["tasks"].pop(task_id)
+    with open(task, "w") as file:
+        json.dump(tasks, file, indent=4)
 
 
 def edit_task(task):
     pass
 
 
-def view_tasks(task, task_id):
-    if task_id is not None:
+def view_tasks(task, task_id=None):
+    if task_id is not None and task_id <= len(task["tasks"]):
         pprint.pprint(
             f"Here is your task: {task["tasks"][task_id - 1]}"
         )  # Adjusting for zero-based index
+    elif task_id > len(task["tasks"]):
+        print("\nTask ID not found.")
     else:
         print(f"\nHere are your tasks: {task}")
 

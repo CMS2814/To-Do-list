@@ -7,6 +7,14 @@
             "due_date": "2025-11-14",
             "priority": "High",
             "status": "Pending"
+        },
+        {
+            "task_id": 2,
+            "name": "Code",
+            "description": "Code a To-Do list app",
+            "due_date": "2025-11-14",
+            "priority": "High",
+            "status": "Pending"
         }
     ]
 }
