@@ -40,7 +40,7 @@ def edit_task(task):
     pass
 
 
-def view_task(task, task_id):
+def view_tasks(task, task_id):
     if task_id is not None:
         pprint.pprint(
             f"Here is your task: {task["tasks"][task_id - 1]}"
