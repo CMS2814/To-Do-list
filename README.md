@@ -1,3 +1,5 @@
+https://roadmap.sh/projects/task-tracker
+
 CLI To-Do List app
 
 A command-line To-Do List app built in python that lets users Add, View, Edit, and Delete task. All data is stored locally using a JSON file.
@@ -15,7 +17,5 @@ How to run:
 2. Run Main.py
 3. Follow the on-screen instructions.
 
-Author
+Author:
 Matthew.S
-
-https://roadmap.sh/projects/task-tracker
