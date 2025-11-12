@@ -17,6 +17,10 @@ with open("Task_Data.json", "r") as file:
 Utilities.print_welcome_message()
 
 while True:
+    Utilities.Load_Tasks_From_File(
+        "Task_Data.json"
+    )  # Load tasks from file at the start of each loop
+
     print(
         "\nChoose an option:\n1. Add Task\n2. View Tasks\n3. Edit/Update Task\n4. Delete Task\n5. Exit"
     )
@@ -24,7 +28,6 @@ while True:
 
     if choice == "1":
         Utilities.add_task("Task_Data.json")
-        Utilities.Load_Tasks_From_File("Task_Data.json")
     elif choice == "2":
         try:
             task_id = int(input("\nEnter task ID or press Enter to view all tasks: "))
@@ -42,13 +45,11 @@ while True:
         except ValueError:
             print("\nInvalid task ID. Please enter a number.")
         Utilities.edit_task("Task_Data.json", task_id, update_option)
-        Utilities.Load_Tasks_From_File("Task_Data.json")
     elif choice == "4":
         task_id_input = input("\nEnter the task ID to delete: ")
         try:
             task_id = int(task_id_input) - 1  # Adjusting for zero-based index
             Utilities.delete_task("Task_Data.json", task_id)
-            Utilities.Load_Tasks_From_File("Task_Data.json")
         except ValueError:
             print("\nInvalid task ID. Please enter a number.")
     elif choice == "5":
@@ -56,3 +57,6 @@ while True:
         break
     else:
         print("\nInvalid choice. Please try again.")
+    Utilities.Load_Tasks_From_File(
+        "Task_Data.json"
+    )  # Reload tasks from file at the end of each loop
